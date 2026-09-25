@@ -1,0 +1,280 @@
+{
+  "info": {
+    "_postman_id": "1c47ae43-bfb5-4daf-98a2-8cc5f7ced664",
+    "name": "propapp",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "8184002",
+    "_collection_link": "https://go.postman.co/collection/8184002-1c47ae43-bfb5-4daf-98a2-8cc5f7ced664?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "get all properties",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/listings",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "listings"
+          ],
+          "query": [
+            {
+              "key": "type",
+              "value": "rent",
+              "disabled": true
+            },
+            {
+              "key": "min_price",
+              "value": "5000000",
+              "disabled": true
+            },
+            {
+              "key": "max_price",
+              "value": "50000000",
+              "disabled": true
+            },
+            {
+              "key": "bedrooms",
+              "value": "3",
+              "disabled": true
+            },
+            {
+              "key": "sort",
+              "value": "price_asc",
+              "disabled": true
+            },
+            {
+              "key": "per_page",
+              "value": "5",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create property",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"agent_id\": 1,\r\n  \"title\": \"3 bedroom flat in Lekki\",\r\n  \"description\": \"Serviced flat with a sea view.\",\r\n  \"type\": \"rent\",\r\n  \"address\": \"Admiralty Way, Lekki\",\r\n  \"price\": 2500000,\r\n  \"bedrooms\": 3,\r\n  \"latitude\": 6.4413,\r\n  \"longitude\": 3.4721\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/listings",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "listings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "show single property",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/listings/1",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "listings",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "update property",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Renovated 3 bedroom flat in Lekki\",\r\n  \"price\": 2750000,\r\n  \"bedrooms\": 4\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/listings/1",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "listings",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "delete property",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/listings/3",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "listings",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "search for property",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/listings/search",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "listings",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "latitude",
+              "value": "6.5",
+              "disabled": true
+            },
+            {
+              "key": "longitude",
+              "value": "3.4",
+              "disabled": true
+            },
+            {
+              "key": "radius",
+              "value": "20",
+              "disabled": true
+            },
+            {
+              "key": "sort",
+              "value": "distance",
+              "disabled": true
+            },
+            {
+              "key": "per_page",
+              "value": "5",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
